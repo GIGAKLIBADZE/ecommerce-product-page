@@ -1,21 +1,29 @@
 import Minus from "/icon-minus.svg";
 import Plus from "/icon-plus.svg";
 import Basket from "/icon-cart.svg";
+import {
+  Amount,
+  AmountContainer,
+  AddButton,
+  AddToCartContainer,
+  AddButtonText,
+  BasketPicture,
+} from "../components/AddToCardStyles";
 
 const AddToCart: React.FC = () => {
   return (
     <>
-      <div>
-        <div>
+      <AddToCartContainer>
+        <AmountContainer>
           <img src={Minus} alt="Minus" />
-          <span>0</span>
+          <Amount>0</Amount>
           <img src={Plus} alt="Plus" />
-        </div>
-        <button>
-          <img src={Basket} alt="Basket" />
-          <span>Add to cart</span>
-        </button>
-      </div>
+        </AmountContainer>
+        <AddButton>
+          <BasketPicture src={Basket} alt="Basket" />
+          <AddButtonText>Add to cart</AddButtonText>
+        </AddButton>
+      </AddToCartContainer>
     </>
   );
 };
