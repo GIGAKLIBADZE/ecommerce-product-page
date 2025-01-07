@@ -4,7 +4,7 @@ import {
   LeftArrowContainer,
   RightArrowContainer,
   Arrow,
-} from "./PictureStyle";
+} from "../components/PictureStyle";
 import Previous from "/icon-previous.svg";
 import Next from "/icon-next.svg";
 
