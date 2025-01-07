@@ -1,20 +1,32 @@
+import GlobalStyles from "../GlobalStyles";
 import Menu from "/icon-menu.svg";
+import Logo from "/logo.svg";
 import Cart from "/icon-cart.svg";
 import Avatar from "/image-avatar.png";
+import {
+  CartAndAvatar,
+  LayoutContainer,
+  MenuAndLogo,
+} from "../components/LayoutStyles";
 
 const Layout: React.FC = () => {
   return (
     <>
-      <div>
-        <div>
+      <GlobalStyles />
+      <LayoutContainer>
+        <MenuAndLogo>
           <img src={Menu} alt="Menu" />
-          <h1>sneakers</h1>
-        </div>
-        <div>
+          <img src={Logo} alt="Logo" />
+        </MenuAndLogo>
+        <CartAndAvatar>
           <img src={Cart} alt="Cart" />
-          <img src={Avatar} alt="Avatar" />
-        </div>
-      </div>
+          <img
+            src={Avatar}
+            alt="Avatar"
+            style={{ width: "2.4rem", height: "2.4rem" }}
+          />
+        </CartAndAvatar>
+      </LayoutContainer>
     </>
   );
 };
