@@ -8,6 +8,7 @@ import {
   LayoutContainer,
   MenuAndLogo,
 } from "../components/LayoutStyles";
+import { Outlet } from "react-router-dom";
 
 const Layout: React.FC = () => {
   return (
@@ -27,6 +28,7 @@ const Layout: React.FC = () => {
           />
         </CartAndAvatar>
       </LayoutContainer>
+      <Outlet />
     </>
   );
 };
