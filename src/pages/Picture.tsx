@@ -19,13 +19,30 @@ const Picture: React.FC = () => {
   return (
     <>
       <ProductPictureChangeContainer>
-        <LeftArrowContainer>
+        <div
+          style={{
+            position: "relative",
+            width: "100%",
+            maxWidth: "50rem",
+            height: "30rem",
+            marginInline: "auto",
+          }}
+        >
+          <ProductPicture src={photos[0]} alt="Photo" />
+          <LeftArrowContainer>
+            <Arrow src={Previous} alt="Left arrow" />
+          </LeftArrowContainer>
+          <RightArrowContainer>
+            <Arrow src={Next} alt="Right arrow" />
+          </RightArrowContainer>
+        </div>
+        {/* <LeftArrowContainer>
           <Arrow src={Previous} alt="Left arrow" />
         </LeftArrowContainer>
         <RightArrowContainer>
           <Arrow src={Next} alt="Right arrow" />
-        </RightArrowContainer>
-        <ProductPicture src={photos[0]} alt="Photo" />
+        </RightArrowContainer> */}
+        {/* <ProductPicture src={photos[0]} alt="Photo" /> */}
       </ProductPictureChangeContainer>
     </>
   );

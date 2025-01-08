@@ -1,11 +1,15 @@
 import styled from "styled-components";
 
-export const CartContainer = styled.div`
+export const CartContainer = styled.div<{ $add: boolean }>`
   width: 36rem;
   padding: 2.4rem 0 8.5rem;
   border-radius: 10px;
-  background-color: green;
+  background-color: #ffffff;
   margin: auto;
+  display: ${({ $add }) => ($add ? "block" : "none")};
+  position: absolute;
+  top: 7.6rem;
+  z-index: 1;
 `;
 
 export const CartTitle = styled.h3`

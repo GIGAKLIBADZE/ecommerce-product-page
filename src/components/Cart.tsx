@@ -1,9 +1,9 @@
 import { CartContainer, CartTitle, EmptyText, Line } from "./CartStyle";
 
-const Cart: React.FC = () => {
+const Cart: React.FC<{ add: boolean }> = ({ add }) => {
   return (
     <>
-      <CartContainer>
+      <CartContainer $add={add}>
         <div>
           <CartTitle>Cart</CartTitle>
         </div>

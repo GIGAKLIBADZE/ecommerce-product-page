@@ -18,7 +18,7 @@ const GlobalStyles = createGlobalStyle`
         width: 100vw;
         min-height: 100vh;
         overflow-x: hidden;
-        background-color: #fff;
+        background-color: #fff;   
     }
 
 

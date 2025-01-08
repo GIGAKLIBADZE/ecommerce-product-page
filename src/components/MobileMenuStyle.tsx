@@ -2,9 +2,13 @@ import styled from "styled-components";
 
 export const MobileMenuContainer = styled.div`
   width: 25rem;
-  padding: 2.5rem 13.1rem 62.8rem 2.5rem;
+  /* padding: 2.5rem 13.1rem 62.8rem 2.5rem; */
+  padding: 2.5rem;
+  min-height: 100vh;
   background-color: green;
-  position: absolute;
+  /* position: absolute; */
+  position: fixed;
+  top: 0;
   z-index: 2;
 `;
 

@@ -14,9 +14,11 @@ import Cart from "../components/Cart";
 
 const AddToCart: React.FC = () => {
   const [amount, setAmount] = useState<number>(0);
+  const [add, setAdd] = useState<boolean>(false);
 
   return (
     <>
+      <Cart add={add} />
       <AddToCartContainer>
         <AmountContainer>
           <img
@@ -29,12 +31,11 @@ const AddToCart: React.FC = () => {
           <Amount>{amount}</Amount>
           <img src={Plus} alt="Plus" onClick={() => setAmount(amount + 1)} />
         </AmountContainer>
-        <AddButton>
+        <AddButton onClick={() => setAdd(true)}>
           <BasketPicture src={Basket} alt="Basket" />
           <AddButtonText>Add to cart</AddButtonText>
         </AddButton>
       </AddToCartContainer>
-      <Cart />
     </>
   );
 };
