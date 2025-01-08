@@ -1,14 +1,15 @@
+import { CartContainer, CartTitle, EmptyText, Line } from "./CartStyle";
+
 const Cart: React.FC = () => {
   return (
     <>
-      <div>
+      <CartContainer>
         <div>
-          <h3>Cart</h3>
+          <CartTitle>Cart</CartTitle>
         </div>
-        <div>
-          <p>Your Cart is empty.</p>
-        </div>
-      </div>
+        <Line></Line>
+        <EmptyText>Your cart is empty.</EmptyText>
+      </CartContainer>
     </>
   );
 };

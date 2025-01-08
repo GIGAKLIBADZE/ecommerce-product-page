@@ -10,6 +10,7 @@ import {
   BasketPicture,
 } from "../components/AddToCardStyles";
 import { useState } from "react";
+import Cart from "../components/Cart";
 
 const AddToCart: React.FC = () => {
   const [amount, setAmount] = useState<number>(0);
@@ -33,6 +34,7 @@ const AddToCart: React.FC = () => {
           <AddButtonText>Add to cart</AddButtonText>
         </AddButton>
       </AddToCartContainer>
+      <Cart />
     </>
   );
 };
