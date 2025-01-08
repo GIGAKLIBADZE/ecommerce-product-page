@@ -10,14 +10,18 @@ import {
 } from "../components/LayoutStyles";
 import { Outlet } from "react-router-dom";
 import MobileMenu from "../components/MobileMenu";
+import { useState } from "react";
 
 const Layout: React.FC = () => {
+  const [mobileMenu, setMobileMenu] = useState<boolean>(false);
+
   return (
     <>
       <GlobalStyles />
+      {mobileMenu ? <MobileMenu /> : null}
       <LayoutContainer>
         <MenuAndLogo>
-          <img src={Menu} alt="Menu" />
+          <img src={Menu} alt="Menu" onClick={() => setMobileMenu(true)} />
           <img src={Logo} alt="Logo" />
         </MenuAndLogo>
         <CartAndAvatar>
@@ -30,7 +34,6 @@ const Layout: React.FC = () => {
         </CartAndAvatar>
       </LayoutContainer>
       <Outlet />
-      <MobileMenu />
     </>
   );
 };
