@@ -13,15 +13,17 @@ import MobileMenu from "../components/MobileMenu";
 import { useState } from "react";
 
 const Layout: React.FC = () => {
-  const [mobileMenu, setMobileMenu] = useState<boolean>(false);
+  const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false);
 
   return (
     <>
       <GlobalStyles />
-      {mobileMenu ? <MobileMenu /> : null}
+      {showMobileMenu ? (
+        <MobileMenu setShowMobileMenu={setShowMobileMenu} />
+      ) : null}
       <LayoutContainer>
         <MenuAndLogo>
-          <img src={Menu} alt="Menu" onClick={() => setMobileMenu(true)} />
+          <img src={Menu} alt="Menu" onClick={() => setShowMobileMenu(true)} />
           <img src={Logo} alt="Logo" />
         </MenuAndLogo>
         <CartAndAvatar>

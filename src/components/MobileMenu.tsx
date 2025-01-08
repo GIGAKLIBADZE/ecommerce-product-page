@@ -6,11 +6,19 @@ import {
 } from "./MobileMenuStyle";
 import Close from "/icon-close.svg";
 
-const MobileMenu: React.FC = () => {
+const MobileMenu: React.FC<{
+  setShowMobileMenu: React.Dispatch<React.SetStateAction<boolean>>;
+}> = ({ setShowMobileMenu }) => {
   return (
     <>
       <MobileMenuContainer>
-        <CloseIcon src={Close} alt="Close" />
+        <CloseIcon
+          src={Close}
+          alt="Close"
+          onClick={() => {
+            setShowMobileMenu(false);
+          }}
+        />
         <MobileMenuNavigation>
           <MenuListItem>Collections</MenuListItem>
           <MenuListItem>Men</MenuListItem>
