@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
-export const LayoutContainer = styled.div`
+export const LayoutContainer = styled.div<{ $showMobileMenu: boolean }>`
   display: flex;
   justify-content: space-between;
   padding: 2rem 2.4rem 0 2.4rem;
+  opacity: ${({ $showMobileMenu }) => ($showMobileMenu ? "0.75" : "")};
 `;
 
 export const MenuAndLogo = styled.div`

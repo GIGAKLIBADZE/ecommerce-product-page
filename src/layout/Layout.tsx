@@ -21,7 +21,7 @@ const Layout: React.FC = () => {
       {showMobileMenu ? (
         <MobileMenu setShowMobileMenu={setShowMobileMenu} />
       ) : null}
-      <LayoutContainer>
+      <LayoutContainer $showMobileMenu={showMobileMenu}>
         <MenuAndLogo>
           <img src={Menu} alt="Menu" onClick={() => setShowMobileMenu(true)} />
           <img src={Logo} alt="Logo" />

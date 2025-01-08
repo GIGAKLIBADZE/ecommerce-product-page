@@ -9,15 +9,24 @@ import {
   AddButtonText,
   BasketPicture,
 } from "../components/AddToCardStyles";
+import { useState } from "react";
 
 const AddToCart: React.FC = () => {
+  const [amount, setAmount] = useState<number>(0);
+
   return (
     <>
       <AddToCartContainer>
         <AmountContainer>
-          <img src={Minus} alt="Minus" />
-          <Amount>0</Amount>
-          <img src={Plus} alt="Plus" />
+          <img
+            src={Minus}
+            alt="Minus"
+            onClick={() => {
+              amount === 0 ? "" : setAmount(amount - 1);
+            }}
+          />
+          <Amount>{amount}</Amount>
+          <img src={Plus} alt="Plus" onClick={() => setAmount(amount + 1)} />
         </AmountContainer>
         <AddButton>
           <BasketPicture src={Basket} alt="Basket" />
