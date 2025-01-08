@@ -9,6 +9,7 @@ import {
   MenuAndLogo,
 } from "../components/LayoutStyles";
 import { Outlet } from "react-router-dom";
+import MobileMenu from "../components/MobileMenu";
 
 const Layout: React.FC = () => {
   return (
@@ -29,6 +30,7 @@ const Layout: React.FC = () => {
         </CartAndAvatar>
       </LayoutContainer>
       <Outlet />
+      <MobileMenu />
     </>
   );
 };
