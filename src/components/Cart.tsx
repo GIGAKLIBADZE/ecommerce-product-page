@@ -1,7 +1,14 @@
 const Cart: React.FC = () => {
   return (
     <>
-      <p>Cart</p>
+      <div>
+        <div>
+          <h3>Cart</h3>
+        </div>
+        <div>
+          <p>Your Cart is empty.</p>
+        </div>
+      </div>
     </>
   );
 };
