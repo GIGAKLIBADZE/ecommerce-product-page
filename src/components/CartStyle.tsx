@@ -38,3 +38,38 @@ export const EmptyText = styled.p`
   color: #69707d;
   margin-top: 7.7rem;
 `;
+
+export const ProductContainer = styled.div`
+  display: flex;
+  align-items: center;
+  padding-top: 2.4rem;
+  padding-left: 6.5%;
+  padding-right: 6.5%;
+`;
+
+export const ProductImage = styled.img`
+  width: 5rem;
+  height: 5rem;
+`;
+
+export const Expression = styled.p`
+  font-size: 1.6rem;
+  font-weight: normal;
+  line-height: 1.63;
+  color: #69707d;
+  margin-left: 1.6rem;
+`;
+
+export const TotalPrice = styled.span`
+  font-weight: bold;
+  color: #1d2026;
+  margin-left: 0.4rem;
+`;
+
+export const Checkout = styled.button`
+  width: 31.2rem;
+  border-radius: 10px;
+  padding: 7.05% 38.14% 5.77% 38.46%;
+  background-color: #ff7e1b;
+  border: none;
+`;

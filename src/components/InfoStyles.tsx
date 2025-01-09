@@ -30,6 +30,7 @@ export const Description = styled.p`
   text-align: left;
   color: #69707d;
   margin-top: 1.5rem;
+  max-width: 50rem;
 `;
 
 export const PriceInfoContainer = styled.div`
