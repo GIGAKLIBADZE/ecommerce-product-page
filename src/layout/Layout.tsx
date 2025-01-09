@@ -11,19 +11,30 @@ import {
 import { Outlet } from "react-router-dom";
 import MobileMenu from "../components/MobileMenu";
 import { useState } from "react";
+import { useMediaQuery } from "@mui/material";
 
 const Layout: React.FC = () => {
   const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false);
 
+  const desktop = useMediaQuery("(min-width: 90rem)");
   return (
     <>
       <GlobalStyles />
-      {showMobileMenu ? (
+      {!desktop && showMobileMenu ? (
         <MobileMenu setShowMobileMenu={setShowMobileMenu} />
       ) : null}
+      {/* {showMobileMenu ? (
+        <MobileMenu setShowMobileMenu={setShowMobileMenu} />
+      ) : null} */}
       <LayoutContainer $showMobileMenu={showMobileMenu}>
         <MenuAndLogo>
-          <img src={Menu} alt="Menu" onClick={() => setShowMobileMenu(true)} />
+          {!desktop ? (
+            <img
+              src={Menu}
+              alt="Menu"
+              onClick={() => setShowMobileMenu(true)}
+            />
+          ) : null}
           <img src={Logo} alt="Logo" />
         </MenuAndLogo>
         <CartAndAvatar>
