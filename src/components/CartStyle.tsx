@@ -1,14 +1,16 @@
 import styled from "styled-components";
 
 export const CartContainer = styled.div<{ $add: boolean }>`
-  width: 36rem;
+  width: 96%;
+  max-width: 48rem;
   padding: 2.4rem 0 8.5rem;
   border-radius: 10px;
   background-color: #ffffff;
-  margin: auto;
   display: ${({ $add }) => ($add ? "block" : "none")};
   position: absolute;
   top: 7.6rem;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1;
 `;
 
