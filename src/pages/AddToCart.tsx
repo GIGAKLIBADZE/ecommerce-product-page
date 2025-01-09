@@ -36,6 +36,25 @@ const AddToCart: React.FC = () => {
           <AddButtonText>Add to cart</AddButtonText>
         </AddButton>
       </AddToCartContainer>
+
+      {/* <Cart add={add} amount={amount} />
+      <AddToCartContainer>
+        <AmountContainer>
+          <img
+            src={Minus}
+            alt="Minus"
+            onClick={() => {
+              amount === 0 ? "" : setAmount(amount - 1);
+            }}
+          />
+          <Amount>{amount}</Amount>
+          <img src={Plus} alt="Plus" onClick={() => setAmount(amount + 1)} />
+        </AmountContainer>
+        <AddButton onClick={() => setAdd(true)}>
+          <BasketPicture src={Basket} alt="Basket" />
+          <AddButtonText>Add to cart</AddButtonText>
+        </AddButton>
+      </AddToCartContainer> */}
     </>
   );
 };

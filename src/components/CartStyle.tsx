@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const CartContainer = styled.div<{ $add: boolean }>`
   width: 96%;
+  height: 25.6rem;
   max-width: 48rem;
   padding: 2.4rem 0 8.5rem;
   border-radius: 10px;
@@ -42,9 +43,9 @@ export const EmptyText = styled.p`
 export const ProductContainer = styled.div`
   display: flex;
   align-items: center;
-  padding-top: 2.4rem;
+  /* padding-top: 2.4rem;
   padding-left: 6.5%;
-  padding-right: 6.5%;
+  padding-right: 6.5%; */
 `;
 
 export const ProductImage = styled.img`
@@ -67,9 +68,16 @@ export const TotalPrice = styled.span`
 `;
 
 export const Checkout = styled.button`
+  display: flex;
+  justify-content: center;
   width: 31.2rem;
   border-radius: 10px;
   padding: 7.05% 38.14% 5.77% 38.46%;
   background-color: #ff7e1b;
   border: none;
+  margin-top: 2.4rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  line-height: normal;
+  color: #fff;
 `;
