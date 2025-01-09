@@ -38,13 +38,15 @@ const Layout: React.FC = () => {
             />
           ) : null}
           <img src={Logo} alt="Logo" />
-          <DesktopMenu>
-            <DesktopMenuElement>Colletions</DesktopMenuElement>
-            <DesktopMenuElement>Men</DesktopMenuElement>
-            <DesktopMenuElement>Women</DesktopMenuElement>
-            <DesktopMenuElement>About</DesktopMenuElement>
-            <DesktopMenuElement>Contact</DesktopMenuElement>
-          </DesktopMenu>
+          {desktop ? (
+            <DesktopMenu>
+              <DesktopMenuElement>Colletions</DesktopMenuElement>
+              <DesktopMenuElement>Men</DesktopMenuElement>
+              <DesktopMenuElement>Women</DesktopMenuElement>
+              <DesktopMenuElement>About</DesktopMenuElement>
+              <DesktopMenuElement>Contact</DesktopMenuElement>
+            </DesktopMenu>
+          ) : null}
         </MenuAndLogo>
         <CartAndAvatar>
           <img src={Cart} alt="Cart" />
