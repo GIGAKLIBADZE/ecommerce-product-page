@@ -37,7 +37,7 @@ const Cart: React.FC<{ add: boolean; amount: number }> = ({ add, amount }) => {
                 <Expression>Fall Limited Edition Sneakers</Expression>
                 <Expression>
                   $125.00 x {amount}
-                  <TotalPrice>$375.00</TotalPrice>
+                  <TotalPrice>${amount * 125}</TotalPrice>
                 </Expression>
               </div>
               <img
