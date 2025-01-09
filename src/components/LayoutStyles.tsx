@@ -9,7 +9,12 @@ export const LayoutContainer = styled.div<{ $showMobileMenu: boolean }>`
 
 export const MenuAndLogo = styled.div`
   display: flex;
+  align-items: center;
   gap: 1.6rem;
+
+  @media (min-width: 90rem) {
+    gap: 5.7rem;
+  }
 `;
 
 export const CartAndAvatar = styled.div`
@@ -22,4 +27,16 @@ export const Avatar = styled.img`
   height: 2.4rem;
   width: 24px;
   height: 24px;
+`;
+
+export const DesktopMenu = styled.nav`
+  display: flex;
+  gap: 3.2rem;
+`;
+
+export const DesktopMenuElement = styled.p`
+  font-size: 1.5rem;
+  font-weight: normal;
+  line-height: 1.73;
+  color: #69707d;
 `;

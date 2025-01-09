@@ -5,6 +5,8 @@ import Cart from "/icon-cart.svg";
 import Avatar from "/image-avatar.png";
 import {
   CartAndAvatar,
+  DesktopMenu,
+  DesktopMenuElement,
   LayoutContainer,
   MenuAndLogo,
 } from "../components/LayoutStyles";
@@ -36,14 +38,14 @@ const Layout: React.FC = () => {
             />
           ) : null}
           <img src={Logo} alt="Logo" />
+          <DesktopMenu>
+            <DesktopMenuElement>Colletions</DesktopMenuElement>
+            <DesktopMenuElement>Men</DesktopMenuElement>
+            <DesktopMenuElement>Women</DesktopMenuElement>
+            <DesktopMenuElement>About</DesktopMenuElement>
+            <DesktopMenuElement>Contact</DesktopMenuElement>
+          </DesktopMenu>
         </MenuAndLogo>
-        <nav>
-          <p>Colletions</p>
-          <p>Men</p>
-          <p>Women</p>
-          <p>About</p>
-          <p>Contact</p>
-        </nav>
         <CartAndAvatar>
           <img src={Cart} alt="Cart" />
           <img
