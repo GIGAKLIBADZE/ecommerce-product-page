@@ -18,7 +18,7 @@ const AddToCart: React.FC = () => {
 
   return (
     <>
-      <Cart add={add} />
+      <Cart add={add} amount={amount} />
       <AddToCartContainer>
         <AmountContainer>
           <img
