@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const MainContainer = styled.div`
   @media (min-width: 90rem) {
@@ -13,7 +13,6 @@ export const LayoutContainer = styled.div<{ $showMobileMenu: boolean }>`
   opacity: ${({ $showMobileMenu }) => ($showMobileMenu ? "0.75" : "")};
 
   @media (min-width: 90rem) {
-    /* padding: 4.3rem 16.5rem; */
     padding: 0;
   }
 `;
@@ -36,6 +35,15 @@ export const CartAndAvatar = styled.div`
   @media (min-width: 90rem) {
     gap: 5.7rem;
   }
+`;
+
+export const CartBasket = styled.img<{ $amount: number }>`
+  ${({ $amount }) =>
+    $amount > 0
+      ? css`
+          filter: brightness(0) invert(0);
+        `
+      : ""}
 `;
 
 export const AmountContainer = styled.div`

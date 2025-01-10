@@ -13,6 +13,7 @@ import {
   MainContainer,
   Line,
   AmountContainer,
+  CartBasket,
 } from "../components/LayoutStyles";
 import { Outlet } from "react-router-dom";
 import MobileMenu from "../components/MobileMenu";
@@ -62,7 +63,7 @@ const Layout: React.FC = () => {
           </MenuAndLogo>
           <CartAndAvatar>
             <div>
-              <img src={Cart} alt="Cart" />
+              <CartBasket src={Cart} alt="Cart" $amount={amount} />
               <AmountContainer>
                 <small>{amount}</small>
               </AmountContainer>
