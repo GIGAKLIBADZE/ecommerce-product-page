@@ -7,12 +7,20 @@ export const CartContainer = styled.div<{ $add: boolean }>`
   padding: 2.4rem 0 8.5rem;
   border-radius: 10px;
   background-color: #ffffff;
+  box-shadow: 0 2rem 5rem -2rem rgba(29, 32, 38, 0.5);
   display: ${({ $add }) => ($add ? "block" : "none")};
   position: absolute;
   top: 7.6rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
+
+  @media (min-width: 90rem) {
+    left: auto;
+    transform: none;
+    top: 9.4rem;
+    right: 8.9rem;
+  }
 `;
 
 export const CartTitle = styled.h3`

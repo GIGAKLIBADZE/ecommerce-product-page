@@ -50,6 +50,7 @@ const Picture: React.FC = () => {
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
+              gap: "3.2rem",
             }}
           >
             <ProductPicture src={photos[0]} alt="Photo" />
