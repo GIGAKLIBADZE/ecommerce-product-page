@@ -17,9 +17,20 @@ import { Outlet } from "react-router-dom";
 import MobileMenu from "../components/MobileMenu";
 import { useState } from "react";
 import { useMediaQuery } from "@mui/material";
+import { createContext } from "react";
+import AddToCart from "../pages/AddToCart";
+
+export const CounterContext = createContext<{
+  amount: number;
+  setAmount: React.Dispatch<React.SetStateAction<number>>;
+}>({
+  amount: 0,
+  setAmount: () => {},
+});
 
 const Layout: React.FC = () => {
   const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false);
+  const [amount, setAmount] = useState<number>(0);
 
   const desktop = useMediaQuery("(min-width: 90rem)");
   return (
@@ -50,13 +61,18 @@ const Layout: React.FC = () => {
             ) : null}
           </MenuAndLogo>
           <CartAndAvatar>
-            <img src={Cart} alt="Cart" />
+            <div>
+              <img src={Cart} alt="Cart" />
+              <small>{amount}</small>
+            </div>
             <AvatarPicture src={Avatar} alt="Avatar" />
           </CartAndAvatar>
         </LayoutContainer>
         {desktop ? <Line></Line> : null}
       </MainContainer>
-      <Outlet />
+      <CounterContext.Provider value={{ amount, setAmount }}>
+        <Outlet />
+      </CounterContext.Provider>
     </>
   );
 };
