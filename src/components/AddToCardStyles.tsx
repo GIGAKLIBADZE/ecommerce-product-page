@@ -7,6 +7,13 @@ export const AddToCartContainer = styled.div`
   margin-top: 2.7rem;
   padding: 0 2.4rem 8.8rem 2.4rem;
   width: 100%;
+
+  @media (min-width: 90rem) {
+    flex-direction: row;
+    padding: 0;
+    gap: 1.6rem;
+    margin-top: 3.2rem;
+  }
 `;
 
 export const AmountContainer = styled.div`
@@ -20,6 +27,11 @@ export const AmountContainer = styled.div`
   background-color: #f6f8fd;
   width: 100%;
   max-width: 50rem;
+
+  @media (min-width: 90rem) {
+    width: 15.7rem;
+    padding: 2.2rem 1.6rem 1.7rem;
+  }
 `;
 
 export const Amount = styled.span`
@@ -37,7 +49,7 @@ export const AddButton = styled.button`
   gap: 1.5rem;
   /* width: 32.7rem; */
   height: 6rem;
-  padding: 1.9rem 10.4rem 1.8rem;
+  /* padding: 1.9rem 10.4rem 1.8rem; */
   border-radius: 10px;
   background-color: #ff7e1b;
   box-shadow: 0 2rem 5rem -2rem #ff7e1b;
@@ -45,6 +57,11 @@ export const AddButton = styled.button`
   margin-top: 1.6rem;
   width: 100%;
   max-width: 50rem;
+
+  @media (min-width: 90rem) {
+    width: 27.2rem;
+    margin-top: 0;
+  }
 `;
 
 export const BasketPicture = styled.img`

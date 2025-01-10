@@ -3,6 +3,11 @@ import styled from "styled-components";
 export const InfoContainer = styled.div`
   margin-top: 2.4rem;
   padding: 0 2.4rem;
+
+  @media (min-width: 90rem) {
+    margin-top: 0;
+    padding: 0;
+  }
 `;
 
 export const Company = styled.h6`
@@ -12,6 +17,11 @@ export const Company = styled.h6`
   letter-spacing: 1.85px;
   text-align: left;
   color: #ff7e1b;
+
+  @media (min-width: 90rem) {
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+  }
 `;
 
 export const ProductName = styled.h2`
@@ -21,6 +31,13 @@ export const ProductName = styled.h2`
   text-align: left;
   color: #1d2026;
   margin-top: 1.9rem;
+
+  @media (min-width: 90rem) {
+    font-size: 4.4rem;
+    line-height: 1.09;
+    width: 44.5rem;
+    margin-top: 2.7;
+  }
 `;
 
 export const Description = styled.p`
@@ -31,6 +48,12 @@ export const Description = styled.p`
   color: #69707d;
   margin-top: 1.5rem;
   max-width: 50rem;
+
+  @media (min-width: 90rem) {
+    font-size: 1.6rem;
+    line-height: 1.63;
+    margin-top: 3.2rem;
+  }
 `;
 
 export const PriceInfoContainer = styled.div`
@@ -38,6 +61,12 @@ export const PriceInfoContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-top: 2.8rem;
+
+  @media (min-width: 90rem) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
 `;
 
 export const PriceInfoSubContainer = styled.div`
