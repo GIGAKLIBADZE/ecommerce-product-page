@@ -84,7 +84,6 @@ const Picture: React.FC = () => {
           </RightArrowContainer>
         </div>
       </ProductPictureChangeContainer>
-      <></>
       {zoomIn && desktop ? (
         <div
           style={{
@@ -98,13 +97,15 @@ const Picture: React.FC = () => {
             alignItems: "center",
             gap: "4rem",
           }}
+          onClick={() => setZoomIn(false)}
         >
           <ProductPicture
+            onClick={(e) => e.stopPropagation()}
             src={photos[0]}
             alt="Photo"
             style={{ marginTop: "13.3rem" }}
           />
-          <ThumbnailPicturesContainer>
+          <ThumbnailPicturesContainer onClick={(e) => e.stopPropagation()}>
             <ThumbnailPicture src={photos[0]} alt="Thumbnail photo" />{" "}
             <ThumbnailPicture src={photos[1]} alt="Thumbnail photo" />{" "}
             <ThumbnailPicture src={photos[2]} alt="Thumbnail photo" />
