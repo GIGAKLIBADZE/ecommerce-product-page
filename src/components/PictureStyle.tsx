@@ -11,6 +11,12 @@ export const ProductPicture = styled.img`
   object-fit: cover;
   width: 100%;
   height: 100%;
+
+  @media (min-width: 90rem) {
+    width: 44.5rem;
+    height: 44.5rem;
+    border-radius: 15px;
+  }
 `;
 
 export const LeftArrowContainer = styled.div`
@@ -26,6 +32,10 @@ export const LeftArrowContainer = styled.div`
   top: 50%;
   left: 1.6rem;
   transform: translateY(-50%);
+
+  @media (min-width: 90rem) {
+    display: none;
+  }
 `;
 
 export const RightArrowContainer = styled.div`
@@ -41,9 +51,25 @@ export const RightArrowContainer = styled.div`
   right: 1.6rem;
   top: 50%;
   transform: translateY(-50%);
+
+  @media (min-width: 90rem) {
+    display: none;
+  }
 `;
 
 export const Arrow = styled.img`
   width: 0.6rem;
   height: 1.2rem;
+`;
+
+export const ThumbnailPicturesContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 3.1rem;
+`;
+
+export const ThumbnailPicture = styled.img`
+  width: 8.8rem;
+  height: 8.8rem;
+  border-radius: 10px;
 `;
