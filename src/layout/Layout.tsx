@@ -10,6 +10,8 @@ import {
   DesktopMenuElement,
   LayoutContainer,
   MenuAndLogo,
+  MainContainer,
+  Line,
 } from "../components/LayoutStyles";
 import { Outlet } from "react-router-dom";
 import MobileMenu from "../components/MobileMenu";
@@ -23,37 +25,37 @@ const Layout: React.FC = () => {
   return (
     <>
       <GlobalStyles />
-      {!desktop && showMobileMenu ? (
-        <MobileMenu setShowMobileMenu={setShowMobileMenu} />
-      ) : null}
-      {/* {showMobileMenu ? (
-        <MobileMenu setShowMobileMenu={setShowMobileMenu} />
-      ) : null} */}
-      <LayoutContainer $showMobileMenu={showMobileMenu}>
-        <MenuAndLogo>
-          {!desktop ? (
-            <img
-              src={Menu}
-              alt="Menu"
-              onClick={() => setShowMobileMenu(true)}
-            />
-          ) : null}
-          <img src={Logo} alt="Logo" />
-          {desktop ? (
-            <DesktopMenu>
-              <DesktopMenuElement>Colletions</DesktopMenuElement>
-              <DesktopMenuElement>Men</DesktopMenuElement>
-              <DesktopMenuElement>Women</DesktopMenuElement>
-              <DesktopMenuElement>About</DesktopMenuElement>
-              <DesktopMenuElement>Contact</DesktopMenuElement>
-            </DesktopMenu>
-          ) : null}
-        </MenuAndLogo>
-        <CartAndAvatar>
-          <img src={Cart} alt="Cart" />
-          <AvatarPicture src={Avatar} alt="Avatar" />
-        </CartAndAvatar>
-      </LayoutContainer>
+      <MainContainer>
+        {!desktop && showMobileMenu ? (
+          <MobileMenu setShowMobileMenu={setShowMobileMenu} />
+        ) : null}
+        <LayoutContainer $showMobileMenu={showMobileMenu}>
+          <MenuAndLogo>
+            {!desktop ? (
+              <img
+                src={Menu}
+                alt="Menu"
+                onClick={() => setShowMobileMenu(true)}
+              />
+            ) : null}
+            <img src={Logo} alt="Logo" />
+            {desktop ? (
+              <DesktopMenu>
+                <DesktopMenuElement>Colletions</DesktopMenuElement>
+                <DesktopMenuElement>Men</DesktopMenuElement>
+                <DesktopMenuElement>Women</DesktopMenuElement>
+                <DesktopMenuElement>About</DesktopMenuElement>
+                <DesktopMenuElement>Contact</DesktopMenuElement>
+              </DesktopMenu>
+            ) : null}
+          </MenuAndLogo>
+          <CartAndAvatar>
+            <img src={Cart} alt="Cart" />
+            <AvatarPicture src={Avatar} alt="Avatar" />
+          </CartAndAvatar>
+        </LayoutContainer>
+        {desktop ? <Line></Line> : null}
+      </MainContainer>
       <Outlet />
     </>
   );
