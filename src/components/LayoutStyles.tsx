@@ -23,14 +23,22 @@ export const MenuAndLogo = styled.div`
 
 export const CartAndAvatar = styled.div`
   display: flex;
+  align-items: center;
   gap: 2.2rem;
+
+  @media (min-width: 90rem) {
+    gap: 5.7rem;
+  }
 `;
 
-export const Avatar = styled.img`
+export const AvatarPicture = styled.img`
   width: 2.4rem;
   height: 2.4rem;
-  width: 24px;
-  height: 24px;
+
+  @media (min-width: 90rem) {
+    width: 5rem;
+    height: 5rem;
+  }
 `;
 
 export const DesktopMenu = styled.nav`

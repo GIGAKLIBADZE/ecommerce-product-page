@@ -17,28 +17,11 @@ const MobileMenu: React.FC<{
           width: "100%",
           height: "100rem",
           position: "absolute",
-          zIndex: 1,
+          zIndex: 2,
           // opacity: "0.75",
           filter: "opacity(0.75)",
         }}
-      >
-        {/* <MobileMenuContainer>
-          <CloseIcon
-            src={Close}
-            alt="Close"
-            onClick={() => {
-              setShowMobileMenu(false);
-            }}
-          />
-          <MobileMenuNavigation>
-            <MenuListItem>Collections</MenuListItem>
-            <MenuListItem>Men</MenuListItem>
-            <MenuListItem>Women</MenuListItem>
-            <MenuListItem>About</MenuListItem>
-            <MenuListItem>Contact</MenuListItem>
-          </MobileMenuNavigation>
-        </MobileMenuContainer> */}
-      </div>
+      ></div>
       <MobileMenuContainer>
         <CloseIcon
           src={Close}

@@ -4,6 +4,7 @@ import Logo from "/logo.svg";
 import Cart from "/icon-cart.svg";
 import Avatar from "/image-avatar.png";
 import {
+  AvatarPicture,
   CartAndAvatar,
   DesktopMenu,
   DesktopMenuElement,
@@ -50,11 +51,7 @@ const Layout: React.FC = () => {
         </MenuAndLogo>
         <CartAndAvatar>
           <img src={Cart} alt="Cart" />
-          <img
-            src={Avatar}
-            alt="Avatar"
-            style={{ width: "2.4rem", height: "2.4rem" }}
-          />
+          <AvatarPicture src={Avatar} alt="Avatar" />
         </CartAndAvatar>
       </LayoutContainer>
       <Outlet />
