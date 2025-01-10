@@ -51,9 +51,6 @@ export const EmptyText = styled.p`
 export const ProductContainer = styled.div`
   display: flex;
   align-items: center;
-  /* padding-top: 2.4rem;
-  padding-left: 6.5%;
-  padding-right: 6.5%; */
 `;
 
 export const ProductImage = styled.img`
@@ -78,9 +75,10 @@ export const TotalPrice = styled.span`
 export const Checkout = styled.button`
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 31.2rem;
+  height: 5.6rem;
   border-radius: 10px;
-  padding: 7.05% 38.14% 5.77% 38.46%;
   background-color: #ff7e1b;
   border: none;
   margin-top: 2.4rem;

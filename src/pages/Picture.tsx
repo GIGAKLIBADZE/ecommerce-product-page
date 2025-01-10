@@ -19,18 +19,24 @@ const Picture: React.FC = () => {
     "/image-product-4.jpg",
   ];
 
-  const thumbnailPhotos = [
-    "/image-product-1-thumbnail.jpg",
-    "/image-product-2-thumbnail.jpg",
-    "/image-product-3-thumbnail.jpg",
-    "/image-product-4-thumbnail.jpg",
-  ];
-
   const desktop = useMediaQuery("(min-width: 90rem)");
 
   return (
     <>
-      <ProductPictureChangeContainer>
+      <ProductPictureChangeContainer
+        onClick={() => (
+          <div
+            style={{
+              background: "black",
+              width: "20rem",
+              height: "20rem",
+              zIndex: "99rem",
+            }}
+          >
+            Hello
+          </div>
+        )}
+      >
         <div
           style={{
             position: "relative",
@@ -53,7 +59,13 @@ const Picture: React.FC = () => {
               gap: "3.2rem",
             }}
           >
-            <ProductPicture src={photos[0]} alt="Photo" />
+            <ProductPicture
+              src={photos[0]}
+              alt="Photo"
+              onClick={() => (
+                <ThumbnailPicturesContainer></ThumbnailPicturesContainer>
+              )}
+            />
             {desktop ? (
               <ThumbnailPicturesContainer>
                 <ThumbnailPicture src={photos[0]} alt="Thumbnail photo" />{" "}
