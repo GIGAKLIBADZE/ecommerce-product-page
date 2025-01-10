@@ -6,10 +6,11 @@ export const MobileMenuContainer = styled.div`
   padding: 2.5rem;
   min-height: 100vh;
   background-color: green;
-  /* position: absolute; */
-  position: fixed;
+  position: absolute;
+  /* position: relative; */
   top: 0;
   z-index: 2;
+  opacity: 1 !important;
 `;
 
 export const MobileMenuNavigation = styled.nav`

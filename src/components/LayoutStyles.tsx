@@ -5,6 +5,10 @@ export const LayoutContainer = styled.div<{ $showMobileMenu: boolean }>`
   justify-content: space-between;
   padding: 2rem 2.4rem 0 2.4rem;
   opacity: ${({ $showMobileMenu }) => ($showMobileMenu ? "0.75" : "")};
+
+  @media (min-width: 90rem) {
+    padding: 4.3rem 16.5rem;
+  }
 `;
 
 export const MenuAndLogo = styled.div`
