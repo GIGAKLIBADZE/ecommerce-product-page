@@ -10,6 +10,7 @@ import {
 import Previous from "/icon-previous.svg";
 import Next from "/icon-next.svg";
 import { useMediaQuery } from "@mui/material";
+import { useState } from "react";
 
 const Picture: React.FC = () => {
   const photos = [
@@ -20,6 +21,8 @@ const Picture: React.FC = () => {
   ];
 
   const desktop = useMediaQuery("(min-width: 90rem)");
+
+  const [zoomIn, setZoomIn] = useState<boolean>(false);
 
   return (
     <>
@@ -62,9 +65,7 @@ const Picture: React.FC = () => {
             <ProductPicture
               src={photos[0]}
               alt="Photo"
-              onClick={() => (
-                <ThumbnailPicturesContainer></ThumbnailPicturesContainer>
-              )}
+              onClick={() => setZoomIn(true)}
             />
             {desktop ? (
               <ThumbnailPicturesContainer>
@@ -83,6 +84,34 @@ const Picture: React.FC = () => {
           </RightArrowContainer>
         </div>
       </ProductPictureChangeContainer>
+      <></>
+      {zoomIn && desktop ? (
+        <div
+          style={{
+            position: "fixed",
+            backgroundColor: "rgba(0, 0, 0, 0.75)",
+            width: "100vw",
+            minHeight: "100vh",
+            top: 0,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: "4rem",
+          }}
+        >
+          <ProductPicture
+            src={photos[0]}
+            alt="Photo"
+            style={{ marginTop: "13.3rem" }}
+          />
+          <ThumbnailPicturesContainer>
+            <ThumbnailPicture src={photos[0]} alt="Thumbnail photo" />{" "}
+            <ThumbnailPicture src={photos[1]} alt="Thumbnail photo" />{" "}
+            <ThumbnailPicture src={photos[2]} alt="Thumbnail photo" />
+            <ThumbnailPicture src={photos[3]} alt="Thumbnail photo" />
+          </ThumbnailPicturesContainer>
+        </div>
+      ) : null}
     </>
   );
 };
