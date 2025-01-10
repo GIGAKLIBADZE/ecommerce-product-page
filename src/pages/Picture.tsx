@@ -23,6 +23,7 @@ const Picture: React.FC = () => {
   const desktop = useMediaQuery("(min-width: 90rem)");
 
   const [zoomIn, setZoomIn] = useState<boolean>(false);
+  const [currentPicture, setCurrentPicture] = useState<number>(0);
 
   return (
     <>
@@ -63,7 +64,7 @@ const Picture: React.FC = () => {
             }}
           >
             <ProductPicture
-              src={photos[0]}
+              src={photos[currentPicture]}
               alt="Photo"
               onClick={() => setZoomIn(true)}
             />
@@ -76,10 +77,26 @@ const Picture: React.FC = () => {
               </ThumbnailPicturesContainer>
             ) : null}
           </div>
-          <LeftArrowContainer>
+          <LeftArrowContainer
+            onClick={() => {
+              {
+                currentPicture < 1
+                  ? setCurrentPicture(3)
+                  : setCurrentPicture(currentPicture - 1);
+              }
+            }}
+          >
             <Arrow src={Previous} alt="Left arrow" />
           </LeftArrowContainer>
-          <RightArrowContainer>
+          <RightArrowContainer
+            onClick={() => {
+              {
+                currentPicture < 3
+                  ? setCurrentPicture(currentPicture + 1)
+                  : setCurrentPicture(0);
+              }
+            }}
+          >
             <Arrow src={Next} alt="Right arrow" />
           </RightArrowContainer>
         </div>
@@ -96,6 +113,7 @@ const Picture: React.FC = () => {
             flexDirection: "column",
             alignItems: "center",
             gap: "4rem",
+            zIndex: "1",
           }}
           onClick={() => setZoomIn(false)}
         >
