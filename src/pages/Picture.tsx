@@ -70,10 +70,26 @@ const Picture: React.FC = () => {
             />
             {desktop ? (
               <ThumbnailPicturesContainer>
-                <ThumbnailPicture src={photos[0]} alt="Thumbnail photo" />{" "}
-                <ThumbnailPicture src={photos[1]} alt="Thumbnail photo" />{" "}
-                <ThumbnailPicture src={photos[2]} alt="Thumbnail photo" />
-                <ThumbnailPicture src={photos[3]} alt="Thumbnail photo" />
+                <ThumbnailPicture
+                  src={photos[0]}
+                  alt="Thumbnail photo"
+                  onClick={() => setCurrentPicture(0)}
+                />{" "}
+                <ThumbnailPicture
+                  src={photos[1]}
+                  alt="Thumbnail photo"
+                  onClick={() => setCurrentPicture(1)}
+                />{" "}
+                <ThumbnailPicture
+                  src={photos[2]}
+                  alt="Thumbnail photo"
+                  onClick={() => setCurrentPicture(2)}
+                />
+                <ThumbnailPicture
+                  src={photos[3]}
+                  alt="Thumbnail photo"
+                  onClick={() => setCurrentPicture(3)}
+                />
               </ThumbnailPicturesContainer>
             ) : null}
           </div>
@@ -119,15 +135,31 @@ const Picture: React.FC = () => {
         >
           <ProductPicture
             onClick={(e) => e.stopPropagation()}
-            src={photos[0]}
+            src={photos[currentPicture]}
             alt="Photo"
             style={{ marginTop: "13.3rem" }}
           />
           <ThumbnailPicturesContainer onClick={(e) => e.stopPropagation()}>
-            <ThumbnailPicture src={photos[0]} alt="Thumbnail photo" />{" "}
-            <ThumbnailPicture src={photos[1]} alt="Thumbnail photo" />{" "}
-            <ThumbnailPicture src={photos[2]} alt="Thumbnail photo" />
-            <ThumbnailPicture src={photos[3]} alt="Thumbnail photo" />
+            <ThumbnailPicture
+              src={photos[0]}
+              alt="Thumbnail photo"
+              onClick={() => setCurrentPicture(0)}
+            />{" "}
+            <ThumbnailPicture
+              src={photos[1]}
+              alt="Thumbnail photo"
+              onClick={() => setCurrentPicture(1)}
+            />{" "}
+            <ThumbnailPicture
+              src={photos[2]}
+              alt="Thumbnail photo"
+              onClick={() => setCurrentPicture(2)}
+            />
+            <ThumbnailPicture
+              src={photos[3]}
+              alt="Thumbnail photo"
+              onClick={() => setCurrentPicture(3)}
+            />
           </ThumbnailPicturesContainer>
         </div>
       ) : null}
