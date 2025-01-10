@@ -38,6 +38,23 @@ export const CartAndAvatar = styled.div`
   }
 `;
 
+export const AmountContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.9rem;
+  height: 1.3rem;
+  border-radius: 6.5px;
+  background-color: #ff7e1b;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: normal;
+  color: #ffffff;
+  margin-top: -2.8rem;
+  margin-left: 1rem;
+  position: sticky;
+`;
+
 export const AvatarPicture = styled.img`
   width: 2.4rem;
   height: 2.4rem;

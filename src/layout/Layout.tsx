@@ -12,13 +12,13 @@ import {
   MenuAndLogo,
   MainContainer,
   Line,
+  AmountContainer,
 } from "../components/LayoutStyles";
 import { Outlet } from "react-router-dom";
 import MobileMenu from "../components/MobileMenu";
 import { useState } from "react";
 import { useMediaQuery } from "@mui/material";
 import { createContext } from "react";
-import AddToCart from "../pages/AddToCart";
 
 export const CounterContext = createContext<{
   amount: number;
@@ -63,7 +63,9 @@ const Layout: React.FC = () => {
           <CartAndAvatar>
             <div>
               <img src={Cart} alt="Cart" />
-              <small>{amount}</small>
+              <AmountContainer>
+                <small>{amount}</small>
+              </AmountContainer>
             </div>
             <AvatarPicture src={Avatar} alt="Avatar" />
           </CartAndAvatar>
