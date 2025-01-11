@@ -6,6 +6,11 @@ import {
   Arrow,
   ThumbnailPicture,
   ThumbnailPicturesContainer,
+  OuterProductPictureChangeContainer,
+  InnerProductPictureChangeContainer,
+  ZoomedContainer,
+  ZoomedInnerContainer,
+  Close,
 } from "../components/PictureStyle";
 import Previous from "/icon-previous.svg";
 import Next from "/icon-next.svg";
@@ -28,42 +33,9 @@ const Picture: React.FC = () => {
 
   return (
     <>
-      <ProductPictureChangeContainer
-        onClick={() => (
-          <div
-            style={{
-              background: "black",
-              width: "20rem",
-              height: "20rem",
-              zIndex: "99rem",
-            }}
-          >
-            Hello
-          </div>
-        )}
-      >
-        <div
-          style={{
-            position: "relative",
-            width: "100%",
-            maxWidth: "50rem",
-            height: "30rem",
-            marginInline: "auto",
-          }}
-        >
-          <div
-            style={{
-              position: "relative",
-              width: "100%",
-              maxWidth: "50rem",
-              height: "30rem",
-              marginInline: "auto",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              gap: "3.2rem",
-            }}
-          >
+      <ProductPictureChangeContainer>
+        <OuterProductPictureChangeContainer>
+          <InnerProductPictureChangeContainer>
             <ProductPicture
               src={photos[currentPicture]}
               alt="Photo"
@@ -73,28 +45,29 @@ const Picture: React.FC = () => {
               <ThumbnailPicturesContainer>
                 <ThumbnailPicture
                   src={photos[0]}
-                  alt="Thumbnail photo"
+                  alt="Thumbnail photo 1"
                   onClick={() => setCurrentPicture(0)}
                 />{" "}
                 <ThumbnailPicture
                   src={photos[1]}
-                  alt="Thumbnail photo"
+                  alt="Thumbnail photo 2"
                   onClick={() => setCurrentPicture(1)}
                 />{" "}
                 <ThumbnailPicture
                   src={photos[2]}
-                  alt="Thumbnail photo"
+                  alt="Thumbnail photo 3"
                   onClick={() => setCurrentPicture(2)}
                 />
                 <ThumbnailPicture
                   src={photos[3]}
-                  alt="Thumbnail photo"
+                  alt="Thumbnail photo 4"
                   onClick={() => setCurrentPicture(3)}
                 />
               </ThumbnailPicturesContainer>
             ) : null}
-          </div>
+          </InnerProductPictureChangeContainer>
           <LeftArrowContainer
+            zoomIn={zoomIn}
             onClick={() => {
               {
                 currentPicture < 1
@@ -106,6 +79,7 @@ const Picture: React.FC = () => {
             <Arrow src={Previous} alt="Left arrow" />
           </LeftArrowContainer>
           <RightArrowContainer
+            zoomIn={zoomIn}
             onClick={() => {
               {
                 currentPicture < 3
@@ -116,39 +90,12 @@ const Picture: React.FC = () => {
           >
             <Arrow src={Next} alt="Right arrow" />
           </RightArrowContainer>
-        </div>
+        </OuterProductPictureChangeContainer>
       </ProductPictureChangeContainer>
       {zoomIn && desktop ? (
-        <div
-          style={{
-            position: "fixed",
-            backgroundColor: "rgba(0, 0, 0, 0.75)",
-            width: "100vw",
-            minHeight: "100vh",
-            top: 0,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            // gap: "4rem",
-            zIndex: "1",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              // gap: "4rem",
-              width: "44.5rem",
-            }}
-          >
-            <img
-              src={Cancel}
-              alt="Cancel"
-              style={{ alignSelf: "end" }}
-              onClick={() => setZoomIn(false)}
-            />
+        <ZoomedContainer>
+          <ZoomedInnerContainer>
+            <Close src={Cancel} alt="Cancel" onClick={() => setZoomIn(false)} />
             <LeftArrowContainer
               zoomIn={zoomIn}
               onClick={() => {
@@ -200,8 +147,8 @@ const Picture: React.FC = () => {
                 onClick={() => setCurrentPicture(3)}
               />
             </ThumbnailPicturesContainer>
-          </div>
-        </div>
+          </ZoomedInnerContainer>
+        </ZoomedContainer>
       ) : null}
     </>
   );

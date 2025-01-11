@@ -7,6 +7,20 @@ export const ProductPictureChangeContainer = styled.div`
   text-align: center;
 `;
 
+export const OuterProductPictureChangeContainer = styled.div`
+  position: relative;
+  max-width: 50rem;
+  margin-inline: auto;
+`;
+
+export const InnerProductPictureChangeContainer = styled.div`
+  height: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3.2rem;
+`;
+
 export const ProductPicture = styled.img`
   object-fit: cover;
   width: 100%;
@@ -72,4 +86,31 @@ export const ThumbnailPicture = styled.img`
   width: 8.8rem;
   height: 8.8rem;
   border-radius: 10px;
+`;
+
+export const ZoomedContainer = styled.div`
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.75);
+  width: 100vw;
+  min-height: 100vh;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+`;
+
+export const ZoomedInnerContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 44.5rem;
+`;
+
+export const Close = styled.img`
+  width: 2rem;
+  height: 2rem;
+  filter: brightness(0) invert(1);
+  align-self: end;
 `;
