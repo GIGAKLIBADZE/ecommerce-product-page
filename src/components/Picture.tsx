@@ -139,7 +139,7 @@ const Picture: React.FC = () => {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              gap: "4rem",
+              // gap: "4rem",
               width: "44.5rem",
             }}
           >
@@ -176,9 +176,9 @@ const Picture: React.FC = () => {
             <ProductPicture
               src={photos[currentPicture]}
               alt="Photo"
-              style={{ marginTop: "13.3rem" }}
+              style={{ marginTop: "2.4rem" }}
             />
-            <ThumbnailPicturesContainer>
+            <ThumbnailPicturesContainer style={{ marginTop: "4rem" }}>
               <ThumbnailPicture
                 src={photos[0]}
                 alt="Thumbnail photo"
