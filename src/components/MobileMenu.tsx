@@ -2,6 +2,7 @@ import {
   CloseIcon,
   MenuListItem,
   MobileMenuContainer,
+  MobileMenuMainContainer,
   MobileMenuNavigation,
 } from "./MobileMenuStyle";
 import Close from "/icon-close.svg";
@@ -11,15 +12,7 @@ const MobileMenu: React.FC<{
 }> = ({ setShowMobileMenu }) => {
   return (
     <>
-      <div
-        style={{
-          backgroundColor: "rgba(0, 0, 0, 0.75)",
-          width: "100%",
-          minHeight: "100vh",
-          position: "fixed",
-          zIndex: 2,
-        }}
-      >
+      <MobileMenuMainContainer>
         <MobileMenuContainer>
           <CloseIcon
             src={Close}
@@ -36,7 +29,7 @@ const MobileMenu: React.FC<{
             <MenuListItem>Contact</MenuListItem>
           </MobileMenuNavigation>
         </MobileMenuContainer>
-      </div>
+      </MobileMenuMainContainer>
     </>
   );
 };

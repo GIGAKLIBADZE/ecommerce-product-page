@@ -15,7 +15,6 @@ import { useContext } from "react";
 import { CounterContext } from "../layout/Layout";
 
 const AddToCart: React.FC = () => {
-  // const [amount, setAmount] = useState<number>(0);
   const [add, setAdd] = useState<boolean>(false);
 
   const { amount, setAmount } = useContext(CounterContext);

@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+export const InfoMainContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 export const InfoContainer = styled.div`
   margin-top: 2.4rem;
   padding: 0 2.4rem;

@@ -20,7 +20,6 @@ export const AmountContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* width: 32.7rem; */
   height: 6rem;
   padding: 2.2rem 2.4rem 1.8rem;
   border-radius: 10px;
@@ -47,9 +46,7 @@ export const AddButton = styled.button`
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
-  /* width: 32.7rem; */
   height: 6rem;
-  /* padding: 1.9rem 10.4rem 1.8rem; */
   border-radius: 10px;
   background-color: #ff7e1b;
   box-shadow: 0 2rem 5rem -2rem #ff7e1b;

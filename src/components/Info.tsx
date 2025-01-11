@@ -8,18 +8,13 @@ import {
   InfoContainer,
   PriceInfoContainer,
   PriceInfoSubContainer,
+  InfoMainContainer,
 } from "../components/InfoStyles";
 
 const Info: React.FC = () => {
   return (
     <>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
+      <InfoMainContainer>
         <InfoContainer>
           <Company>SNEAKER COMPANY</Company>
           <ProductName>Fall Limited Edition Sneakers</ProductName>
@@ -36,7 +31,7 @@ const Info: React.FC = () => {
             <OldPrice>$250.00</OldPrice>
           </PriceInfoContainer>
         </InfoContainer>
-      </div>
+      </InfoMainContainer>
     </>
   );
 };

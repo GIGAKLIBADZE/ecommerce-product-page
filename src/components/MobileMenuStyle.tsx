@@ -1,14 +1,20 @@
 import styled from "styled-components";
 
+export const MobileMenuMainContainer = styled.div`
+  background-color: rgba(0, 0, 0, 0.75);
+  width: 100%;
+  min-height: 100vh;
+  position: fixed;
+  z-index: 2;
+`;
+
 export const MobileMenuContainer = styled.div`
   width: 25rem;
   height: 100rem;
-  /* padding: 2.5rem 13.1rem 62.8rem 2.5rem; */
   padding: 2.5rem;
   min-height: 100vh;
   background-color: #ffffff;
   position: absolute;
-  /* position: relative; */
   top: 0;
   z-index: 2;
   opacity: 1 !important;

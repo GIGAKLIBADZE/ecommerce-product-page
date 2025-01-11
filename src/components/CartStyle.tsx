@@ -33,7 +33,7 @@ export const CartTitle = styled.h3`
 `;
 
 export const Line = styled.div`
-  width: 36rem;
+  width: 100%;
   height: 0.1rem;
   background-color: #e4e9f2;
   margin-top: 2.7rem;
