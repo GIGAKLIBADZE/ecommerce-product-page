@@ -19,7 +19,7 @@ export const ProductPicture = styled.img`
   }
 `;
 
-export const LeftArrowContainer = styled.div`
+export const LeftArrowContainer = styled.div<{ zoomIn: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,11 +34,11 @@ export const LeftArrowContainer = styled.div`
   transform: translateY(-50%);
 
   @media (min-width: 90rem) {
-    display: none;
+    display: ${({ zoomIn }) => (zoomIn ? "flex" : "none")};
   }
 `;
 
-export const RightArrowContainer = styled.div`
+export const RightArrowContainer = styled.div<{ zoomIn: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,7 +53,7 @@ export const RightArrowContainer = styled.div`
   transform: translateY(-50%);
 
   @media (min-width: 90rem) {
-    display: none;
+    display: ${({ zoomIn }) => (zoomIn ? "flex" : "none")};
   }
 `;
 

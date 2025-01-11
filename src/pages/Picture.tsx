@@ -11,6 +11,7 @@ import Previous from "/icon-previous.svg";
 import Next from "/icon-next.svg";
 import { useMediaQuery } from "@mui/material";
 import { useState } from "react";
+import Cancel from "/icon-close.svg";
 
 const Picture: React.FC = () => {
   const photos = [
@@ -133,13 +134,38 @@ const Picture: React.FC = () => {
           }}
           onClick={() => setZoomIn(false)}
         >
+          <div>
+          <img src={Cancel} alt="Cancel" style={{ alignSelf: "right" }} />
+          <LeftArrowContainer
+            zoomIn={zoomIn}
+            onClick={() => {
+              {
+                currentPicture < 1
+                  ? setCurrentPicture(3)
+                  : setCurrentPicture(currentPicture - 1);
+              }
+            }}
+          >
+            <Arrow src={Previous} alt="Left arrow" />
+          </LeftArrowContainer>
+          <RightArrowContainer
+            zoomIn={zoomIn}
+            onClick={() => {
+              {
+                currentPicture < 3
+                  ? setCurrentPicture(currentPicture + 1)
+                  : setCurrentPicture(0);
+              }
+            }}
+          >
+            <Arrow src={Next} alt="Right arrow" />
+          </RightArrowContainer>
           <ProductPicture
-            onClick={(e) => e.stopPropagation()}
             src={photos[currentPicture]}
             alt="Photo"
             style={{ marginTop: "13.3rem" }}
           />
-          <ThumbnailPicturesContainer onClick={(e) => e.stopPropagation()}>
+          <ThumbnailPicturesContainer>
             <ThumbnailPicture
               src={photos[0]}
               alt="Thumbnail photo"
@@ -163,6 +189,7 @@ const Picture: React.FC = () => {
           </ThumbnailPicturesContainer>
         </div>
       ) : null}
+      </div>
     </>
   );
 };
