@@ -129,67 +129,80 @@ const Picture: React.FC = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            gap: "4rem",
+            justifyContent: "center",
+            // gap: "4rem",
             zIndex: "1",
           }}
-          onClick={() => setZoomIn(false)}
         >
-          <div>
-          <img src={Cancel} alt="Cancel" style={{ alignSelf: "right" }} />
-          <LeftArrowContainer
-            zoomIn={zoomIn}
-            onClick={() => {
-              {
-                currentPicture < 1
-                  ? setCurrentPicture(3)
-                  : setCurrentPicture(currentPicture - 1);
-              }
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: "4rem",
+              width: "44.5rem",
             }}
           >
-            <Arrow src={Previous} alt="Left arrow" />
-          </LeftArrowContainer>
-          <RightArrowContainer
-            zoomIn={zoomIn}
-            onClick={() => {
-              {
-                currentPicture < 3
-                  ? setCurrentPicture(currentPicture + 1)
-                  : setCurrentPicture(0);
-              }
-            }}
-          >
-            <Arrow src={Next} alt="Right arrow" />
-          </RightArrowContainer>
-          <ProductPicture
-            src={photos[currentPicture]}
-            alt="Photo"
-            style={{ marginTop: "13.3rem" }}
-          />
-          <ThumbnailPicturesContainer>
-            <ThumbnailPicture
-              src={photos[0]}
-              alt="Thumbnail photo"
-              onClick={() => setCurrentPicture(0)}
-            />{" "}
-            <ThumbnailPicture
-              src={photos[1]}
-              alt="Thumbnail photo"
-              onClick={() => setCurrentPicture(1)}
-            />{" "}
-            <ThumbnailPicture
-              src={photos[2]}
-              alt="Thumbnail photo"
-              onClick={() => setCurrentPicture(2)}
+            <img
+              src={Cancel}
+              alt="Cancel"
+              style={{ alignSelf: "end" }}
+              onClick={() => setZoomIn(false)}
             />
-            <ThumbnailPicture
-              src={photos[3]}
-              alt="Thumbnail photo"
-              onClick={() => setCurrentPicture(3)}
+            <LeftArrowContainer
+              zoomIn={zoomIn}
+              onClick={() => {
+                {
+                  currentPicture < 1
+                    ? setCurrentPicture(3)
+                    : setCurrentPicture(currentPicture - 1);
+                }
+              }}
+            >
+              <Arrow src={Previous} alt="Left arrow" />
+            </LeftArrowContainer>
+            <RightArrowContainer
+              zoomIn={zoomIn}
+              onClick={() => {
+                {
+                  currentPicture < 3
+                    ? setCurrentPicture(currentPicture + 1)
+                    : setCurrentPicture(0);
+                }
+              }}
+            >
+              <Arrow src={Next} alt="Right arrow" />
+            </RightArrowContainer>
+            <ProductPicture
+              src={photos[currentPicture]}
+              alt="Photo"
+              style={{ marginTop: "13.3rem" }}
             />
-          </ThumbnailPicturesContainer>
+            <ThumbnailPicturesContainer>
+              <ThumbnailPicture
+                src={photos[0]}
+                alt="Thumbnail photo"
+                onClick={() => setCurrentPicture(0)}
+              />{" "}
+              <ThumbnailPicture
+                src={photos[1]}
+                alt="Thumbnail photo"
+                onClick={() => setCurrentPicture(1)}
+              />{" "}
+              <ThumbnailPicture
+                src={photos[2]}
+                alt="Thumbnail photo"
+                onClick={() => setCurrentPicture(2)}
+              />
+              <ThumbnailPicture
+                src={photos[3]}
+                alt="Thumbnail photo"
+                onClick={() => setCurrentPicture(3)}
+              />
+            </ThumbnailPicturesContainer>
+          </div>
         </div>
       ) : null}
-      </div>
     </>
   );
 };
