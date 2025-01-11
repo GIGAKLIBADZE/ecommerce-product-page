@@ -1,5 +1,14 @@
 import styled from "styled-components";
 
+export const CartInnerContainer = styled.div`
+  padding-top: 2.4rem;
+  padding-left: 6.5%;
+  padding-right: 6.5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 export const CartContainer = styled.div<{ $add: boolean }>`
   width: 96%;
   height: 25.6rem;

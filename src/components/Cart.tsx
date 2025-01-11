@@ -8,6 +8,7 @@ import {
   TotalPrice,
   ProductContainer,
   Checkout,
+  CartInnerContainer,
 } from "./CartStyle";
 import SmallProductImage from "/public/image-product-1-thumbnail.jpg";
 import Delete from "/icon-delete.svg";
@@ -21,16 +22,7 @@ const Cart: React.FC<{ add: boolean; amount: number }> = ({ add, amount }) => {
         </div>
         <Line></Line>
         {amount > 0 ? (
-          <div
-            style={{
-              paddingTop: "2.4rem",
-              paddingLeft: "6.5%",
-              paddingRight: "6.5%",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
+          <CartInnerContainer>
             <ProductContainer>
               <ProductImage src={SmallProductImage} alt="Product" />
               <div>
@@ -47,7 +39,7 @@ const Cart: React.FC<{ add: boolean; amount: number }> = ({ add, amount }) => {
               />
             </ProductContainer>
             <Checkout>Checkout</Checkout>
-          </div>
+          </CartInnerContainer>
         ) : (
           <EmptyText>Your cart is empty.</EmptyText>
         )}

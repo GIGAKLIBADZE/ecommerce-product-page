@@ -67,7 +67,7 @@ const Picture: React.FC = () => {
             ) : null}
           </InnerProductPictureChangeContainer>
           <LeftArrowContainer
-            zoomIn={zoomIn}
+            $zoomIn={zoomIn}
             onClick={() => {
               {
                 currentPicture < 1
@@ -80,7 +80,7 @@ const Picture: React.FC = () => {
             <Arrow src={Previous} alt="Left arrow" />
           </LeftArrowContainer>
           <RightArrowContainer
-            zoomIn={zoomIn}
+            $zoomIn={zoomIn}
             onClick={() => {
               {
                 currentPicture < 3
@@ -98,36 +98,42 @@ const Picture: React.FC = () => {
         <ZoomedContainer>
           <ZoomedInnerContainer>
             <Close src={Cancel} alt="Cancel" onClick={() => setZoomIn(false)} />
-            <LeftArrowContainer
-              zoomIn={zoomIn}
-              onClick={() => {
-                {
-                  currentPicture < 1
-                    ? setCurrentPicture(3)
-                    : setCurrentPicture(currentPicture - 1);
-                }
+            <div
+              style={{
+                position: "relative",
               }}
             >
-              <Arrow src={Previous} alt="Left arrow" />
-            </LeftArrowContainer>
-            <RightArrowContainer
-              zoomIn={zoomIn}
-              onClick={() => {
-                {
-                  currentPicture < 3
-                    ? setCurrentPicture(currentPicture + 1)
-                    : setCurrentPicture(0);
-                }
-              }}
-            >
-              <Arrow src={Next} alt="Right arrow" />
-            </RightArrowContainer>
-            <ProductPicture
-              src={photos[currentPicture]}
-              alt="Photo"
-              style={{ marginTop: "2.4rem" }}
-            />
-            <ThumbnailPicturesContainer style={{ marginTop: "4rem" }}>
+              <LeftArrowContainer
+                $zoomIn={zoomIn}
+                onClick={() => {
+                  {
+                    currentPicture < 1
+                      ? setCurrentPicture(3)
+                      : setCurrentPicture(currentPicture - 1);
+                  }
+                }}
+              >
+                <Arrow src={Previous} alt="Left arrow" />
+              </LeftArrowContainer>
+              <RightArrowContainer
+                $zoomIn={zoomIn}
+                onClick={() => {
+                  {
+                    currentPicture < 3
+                      ? setCurrentPicture(currentPicture + 1)
+                      : setCurrentPicture(0);
+                  }
+                }}
+              >
+                <Arrow src={Next} alt="Right arrow" />
+              </RightArrowContainer>
+              <ProductPicture
+                style={{ position: "relative" }}
+                src={photos[currentPicture]}
+                alt="Photo"
+              />
+            </div>
+            <ThumbnailPicturesContainer>
               <ThumbnailPicture
                 src={photos[0]}
                 alt="Thumbnail photo"

@@ -30,10 +30,11 @@ export const ProductPicture = styled.img`
     width: 44.5rem;
     height: 44.5rem;
     border-radius: 15px;
+    margin-top: 2.4rem;
   }
 `;
 
-export const LeftArrowContainer = styled.div<{ zoomIn: boolean }>`
+export const LeftArrowContainer = styled.div<{ $zoomIn: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,11 +49,14 @@ export const LeftArrowContainer = styled.div<{ zoomIn: boolean }>`
   transform: translateY(-50%);
 
   @media (min-width: 90rem) {
-    display: ${({ zoomIn }) => (zoomIn ? "flex" : "none")};
+    display: ${({ $zoomIn }) => ($zoomIn ? "flex" : "none")};
+    width: 5.6rem;
+    height: 5.6rem;
+    left: -2.8rem;
   }
 `;
 
-export const RightArrowContainer = styled.div<{ zoomIn: boolean }>`
+export const RightArrowContainer = styled.div<{ $zoomIn: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -67,19 +71,28 @@ export const RightArrowContainer = styled.div<{ zoomIn: boolean }>`
   transform: translateY(-50%);
 
   @media (min-width: 90rem) {
-    display: ${({ zoomIn }) => (zoomIn ? "flex" : "none")};
+    display: ${({ $zoomIn }) => ($zoomIn ? "flex" : "none")};
+    width: 5.6rem;
+    height: 5.6rem;
+    right: -2.8rem;
   }
 `;
 
 export const Arrow = styled.img`
   width: 0.6rem;
   height: 1.2rem;
+
+  @media (min-width: 90rem) {
+    width: 0.8rem;
+    height: 1.6rem;
+  }
 `;
 
 export const ThumbnailPicturesContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 3.1rem;
+  margin-top: 4rem;
 `;
 
 export const ThumbnailPicture = styled.img`
