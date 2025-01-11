@@ -75,6 +75,7 @@ const Picture: React.FC = () => {
                   : setCurrentPicture(currentPicture - 1);
               }
             }}
+            style={{ display: desktop ? "none" : "flex" }}
           >
             <Arrow src={Previous} alt="Left arrow" />
           </LeftArrowContainer>
@@ -87,6 +88,7 @@ const Picture: React.FC = () => {
                   : setCurrentPicture(0);
               }
             }}
+            style={{ display: desktop ? "none" : "flex" }}
           >
             <Arrow src={Next} alt="Right arrow" />
           </RightArrowContainer>
