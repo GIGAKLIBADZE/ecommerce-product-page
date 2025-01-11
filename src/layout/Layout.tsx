@@ -14,6 +14,7 @@ import {
   Line,
   AmountContainer,
   CartBasket,
+  CartAndAvatarInner,
 } from "../components/LayoutStyles";
 import { Outlet } from "react-router-dom";
 import MobileMenu from "../components/MobileMenu";
@@ -62,12 +63,12 @@ const Layout: React.FC = () => {
             ) : null}
           </MenuAndLogo>
           <CartAndAvatar>
-            <div>
+            <CartAndAvatarInner>
               <CartBasket src={Cart} alt="Cart" $amount={amount} />
               <AmountContainer>
                 <small>{amount}</small>
               </AmountContainer>
-            </div>
+            </CartAndAvatarInner>
             <AvatarPicture src={Avatar} alt="Avatar" />
           </CartAndAvatar>
         </LayoutContainer>
