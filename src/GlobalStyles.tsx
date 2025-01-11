@@ -20,8 +20,6 @@ const GlobalStyles = createGlobalStyle`
         overflow-x: hidden;
         background-color: #fff;   
     }
-
-
 `;
 
 export default GlobalStyles;

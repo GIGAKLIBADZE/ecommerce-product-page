@@ -128,7 +128,7 @@ const Picture: React.FC = () => {
                 <Arrow src={Next} alt="Right arrow" />
               </RightArrowContainer>
               <ProductPicture
-                style={{ position: "relative" }}
+                style={{ position: "relative", marginTop: "2.4rem" }}
                 src={photos[currentPicture]}
                 alt="Photo"
               />

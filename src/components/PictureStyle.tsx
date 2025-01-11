@@ -30,7 +30,6 @@ export const ProductPicture = styled.img`
     width: 44.5rem;
     height: 44.5rem;
     border-radius: 15px;
-    margin-top: 2.4rem;
   }
 `;
 

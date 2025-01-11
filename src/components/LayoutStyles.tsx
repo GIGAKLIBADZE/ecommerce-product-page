@@ -44,6 +44,11 @@ export const CartBasket = styled.img<{ $amount: number }>`
           filter: brightness(0) invert(0);
         `
       : ""}
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(0) invert(0);
+  }
 `;
 
 export const AmountContainer = styled.div`
@@ -66,23 +71,45 @@ export const AmountContainer = styled.div`
 export const AvatarPicture = styled.img`
   width: 2.4rem;
   height: 2.4rem;
+  cursor: pointer;
 
   @media (min-width: 90rem) {
     width: 5rem;
     height: 5rem;
+  }
+
+  &:hover {
+    border: solid 0.2rem #ff7e1b;
+    border-radius: 50%;
   }
 `;
 
 export const DesktopMenu = styled.nav`
   display: flex;
   gap: 3.2rem;
+
+  & > p:hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 6.8rem;
+    width: 100%;
+    height: 0.4rem;
+    background: #ff7e1b;
+  }
 `;
 
 export const DesktopMenuElement = styled.p`
+  position: relative;
   font-size: 1.5rem;
   font-weight: normal;
   line-height: 1.73;
   color: #69707d;
+  cursor: pointer;
+
+  &:hover {
+    color: #1d2026;
+  }
 `;
 
 export const Line = styled.div`
