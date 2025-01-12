@@ -9,15 +9,13 @@ import {
   AddButtonText,
   BasketPicture,
 } from "../components/AddToCardStyles";
-import { useState } from "react";
+
 import Cart from "../components/Cart";
 import { useContext } from "react";
-import { CounterContext } from "../layout/Layout";
+import { MainContext } from "../layout/Layout";
 
 const AddToCart: React.FC = () => {
-  const [add, setAdd] = useState<boolean>(false);
-
-  const { amount, setAmount } = useContext(CounterContext);
+  const { amount, setAmount, add, setAdd } = useContext(MainContext);
   return (
     <>
       <Cart add={add} amount={amount} />

@@ -22,17 +22,22 @@ import { useState } from "react";
 import { useMediaQuery } from "@mui/material";
 import { createContext } from "react";
 
-export const CounterContext = createContext<{
+export const MainContext = createContext<{
   amount: number;
   setAmount: React.Dispatch<React.SetStateAction<number>>;
+  add: boolean;
+  setAdd: React.Dispatch<React.SetStateAction<boolean>>;
 }>({
   amount: 0,
   setAmount: () => {},
+  add: false,
+  setAdd: () => {},
 });
 
 const Layout: React.FC = () => {
   const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false);
   const [amount, setAmount] = useState<number>(0);
+  const [add, setAdd] = useState<boolean>(false);
 
   const desktop = useMediaQuery("(min-width: 90rem)");
   return (
@@ -64,7 +69,12 @@ const Layout: React.FC = () => {
           </MenuAndLogo>
           <CartAndAvatar>
             <CartAndAvatarInner>
-              <CartBasket src={Cart} alt="Cart" $amount={amount} />
+              <CartBasket
+                src={Cart}
+                alt="Cart"
+                $amount={amount}
+                onClick={() => setAdd(!add)}
+              />
               <AmountContainer>
                 <small>{amount}</small>
               </AmountContainer>
@@ -74,9 +84,9 @@ const Layout: React.FC = () => {
         </LayoutContainer>
         {desktop ? <Line></Line> : null}
       </MainContainer>
-      <CounterContext.Provider value={{ amount, setAmount }}>
+      <MainContext.Provider value={{ amount, setAmount, add, setAdd }}>
         <Outlet />
-      </CounterContext.Provider>
+      </MainContext.Provider>
     </>
   );
 };
