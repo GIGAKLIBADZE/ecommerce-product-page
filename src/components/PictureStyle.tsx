@@ -91,7 +91,6 @@ export const ThumbnailPicturesContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 3.1rem;
-  margin-top: 4rem;
 `;
 
 export const SingleThumbnailPictureContainer = styled.div`

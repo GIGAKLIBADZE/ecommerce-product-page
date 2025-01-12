@@ -205,7 +205,7 @@ const Picture: React.FC = () => {
                 alt="Photo"
               />
             </div>
-            <ThumbnailPicturesContainer>
+            <ThumbnailPicturesContainer style={{ marginTop: "4rem" }}>
               <SingleThumbnailPictureContainer
                 style={{
                   border:
