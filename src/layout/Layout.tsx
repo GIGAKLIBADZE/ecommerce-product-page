@@ -75,7 +75,7 @@ const Layout: React.FC = () => {
                 $amount={amount}
                 onClick={() => setAdd(!add)}
               />
-              <AmountContainer>
+              <AmountContainer $amount={amount}>
                 <small>{amount}</small>
               </AmountContainer>
             </CartAndAvatarInner>

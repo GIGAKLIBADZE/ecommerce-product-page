@@ -43,10 +43,6 @@ export const CartAndAvatarInner = styled.div`
   &:hover > :first-child {
     filter: brightness(0) invert(0);
   }
-
-  &:hover > :last-child {
-    display: none;
-  }
 `;
 
 export const CartBasket = styled.img<{ $amount: number }>`
@@ -58,8 +54,8 @@ export const CartBasket = styled.img<{ $amount: number }>`
       : ""}
 `;
 
-export const AmountContainer = styled.div`
-  display: flex;
+export const AmountContainer = styled.div<{ $amount: number }>`
+  display: ${({ $amount }) => ($amount > 0 ? "flex" : "none")};
   justify-content: center;
   align-items: center;
   width: 1.9rem;
