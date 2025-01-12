@@ -162,13 +162,19 @@ const Picture: React.FC = () => {
       {zoomIn && desktop ? (
         <ZoomedContainer>
           <ZoomedInnerContainer>
-            <Close src={Cancel} alt="Cancel" onClick={() => setZoomIn(false)} />
+            <Close
+              src={Cancel}
+              alt="Cancel"
+              onClick={() => setZoomIn(false)}
+              className="close"
+            />
             <div
               style={{
                 position: "relative",
               }}
             >
               <LeftArrowContainer
+                className="arrow"
                 $zoomIn={zoomIn}
                 onClick={() => {
                   {
@@ -181,6 +187,7 @@ const Picture: React.FC = () => {
                 <Arrow src={Previous} alt="Left arrow" />
               </LeftArrowContainer>
               <RightArrowContainer
+                className="arrow"
                 $zoomIn={zoomIn}
                 onClick={() => {
                   {
