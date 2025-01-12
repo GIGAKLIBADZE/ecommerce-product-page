@@ -11,3 +11,8 @@
 .white {
   background-color: #ffffff;
 }
+
+.operation:hover {
+  filter: sepia(1) saturate(600%) hue-rotate(-5deg) brightness(1.1);
+  cursor: pointer;
+}

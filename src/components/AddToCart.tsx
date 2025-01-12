@@ -29,9 +29,15 @@ const AddToCart: React.FC = () => {
             onClick={() => {
               amount === 0 ? "" : setAmount(amount - 1);
             }}
+            className="operation"
           />
           <Amount>{amount}</Amount>
-          <img src={Plus} alt="Plus" onClick={() => setAmount(amount + 1)} />
+          <img
+            src={Plus}
+            alt="Plus"
+            onClick={() => setAmount(amount + 1)}
+            className="operation"
+          />
         </AmountContainer>
         <AddButton onClick={() => setAdd(true)}>
           <BasketPicture src={Basket} alt="Basket" />

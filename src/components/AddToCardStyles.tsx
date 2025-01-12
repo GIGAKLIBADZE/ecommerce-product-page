@@ -54,6 +54,11 @@ export const AddButton = styled.button`
   margin-top: 1.6rem;
   width: 100%;
   max-width: 50rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #ffab6a;
+  }
 
   @media (min-width: 90rem) {
     width: 27.2rem;
