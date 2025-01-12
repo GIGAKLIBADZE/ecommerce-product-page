@@ -15,7 +15,7 @@ import {
 } from "../components/PictureStyle";
 import Previous from "/icon-previous.svg";
 import Next from "/icon-next.svg";
-import { colors, useMediaQuery } from "@mui/material";
+import { useMediaQuery } from "@mui/material";
 import { useState } from "react";
 import Cancel from "/icon-close.svg";
 
