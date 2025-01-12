@@ -11,10 +11,11 @@ import {
   ZoomedContainer,
   ZoomedInnerContainer,
   Close,
+  SingleThumbnailPictureContainer,
 } from "../components/PictureStyle";
 import Previous from "/icon-previous.svg";
 import Next from "/icon-next.svg";
-import { useMediaQuery } from "@mui/material";
+import { colors, useMediaQuery } from "@mui/material";
 import { useState } from "react";
 import Cancel from "/icon-close.svg";
 
@@ -43,26 +44,90 @@ const Picture: React.FC = () => {
             />
             {desktop ? (
               <ThumbnailPicturesContainer>
-                <ThumbnailPicture
-                  src={photos[0]}
-                  alt="Thumbnail photo 1"
-                  onClick={() => setCurrentPicture(0)}
-                />{" "}
-                <ThumbnailPicture
-                  src={photos[1]}
-                  alt="Thumbnail photo 2"
-                  onClick={() => setCurrentPicture(1)}
-                />{" "}
-                <ThumbnailPicture
-                  src={photos[2]}
-                  alt="Thumbnail photo 3"
-                  onClick={() => setCurrentPicture(2)}
-                />
-                <ThumbnailPicture
-                  src={photos[3]}
-                  alt="Thumbnail photo 4"
-                  onClick={() => setCurrentPicture(3)}
-                />
+                <SingleThumbnailPictureContainer
+                  style={{
+                    border:
+                      currentPicture === 0 ? "solid 0.2rem #ff7e1b" : "none",
+                    backgroundColor: "#ffffff",
+                  }}
+                >
+                  <ThumbnailPicture
+                    src={photos[0]}
+                    alt="Thumbnail photo 1"
+                    onClick={() => setCurrentPicture(0)}
+                    className={
+                      currentPicture === 0
+                        ? "selected-thumbnail-picture"
+                        : "thumbnail-picture"
+                    }
+                    style={{
+                      borderRadius: "8px",
+                    }}
+                  />{" "}
+                </SingleThumbnailPictureContainer>
+                <SingleThumbnailPictureContainer
+                  style={{
+                    border:
+                      currentPicture === 1 ? "solid 0.2rem #ff7e1b" : "none",
+                    backgroundColor: "#ffffff",
+                  }}
+                >
+                  <ThumbnailPicture
+                    src={photos[1]}
+                    alt="Thumbnail photo 2"
+                    onClick={() => setCurrentPicture(1)}
+                    className={
+                      currentPicture === 1
+                        ? "selected-thumbnail-picture"
+                        : "thumbnail-picture"
+                    }
+                    style={{
+                      borderRadius: "8px",
+                    }}
+                  />{" "}
+                </SingleThumbnailPictureContainer>
+                <SingleThumbnailPictureContainer
+                  style={{
+                    border:
+                      currentPicture === 2 ? "solid 0.2rem #ff7e1b" : "none",
+                    backgroundColor: "#ffffff",
+                  }}
+                >
+                  <ThumbnailPicture
+                    src={photos[2]}
+                    alt="Thumbnail photo 3"
+                    onClick={() => setCurrentPicture(2)}
+                    className={
+                      currentPicture === 2
+                        ? "selected-thumbnail-picture"
+                        : "thumbnail-picture"
+                    }
+                    style={{
+                      borderRadius: "8px",
+                    }}
+                  />{" "}
+                </SingleThumbnailPictureContainer>
+                <SingleThumbnailPictureContainer
+                  style={{
+                    border:
+                      currentPicture === 3 ? "solid 0.2rem #ff7e1b" : "none",
+                    backgroundColor: "#ffffff",
+                  }}
+                >
+                  <ThumbnailPicture
+                    src={photos[3]}
+                    alt="Thumbnail photo 4"
+                    onClick={() => setCurrentPicture(3)}
+                    className={
+                      currentPicture === 3
+                        ? "selected-thumbnail-picture"
+                        : "thumbnail-picture"
+                    }
+                    style={{
+                      borderRadius: "8px",
+                    }}
+                  />{" "}
+                </SingleThumbnailPictureContainer>
               </ThumbnailPicturesContainer>
             ) : null}
           </InnerProductPictureChangeContainer>
@@ -134,26 +199,90 @@ const Picture: React.FC = () => {
               />
             </div>
             <ThumbnailPicturesContainer>
-              <ThumbnailPicture
-                src={photos[0]}
-                alt="Thumbnail photo"
-                onClick={() => setCurrentPicture(0)}
-              />{" "}
-              <ThumbnailPicture
-                src={photos[1]}
-                alt="Thumbnail photo"
-                onClick={() => setCurrentPicture(1)}
-              />{" "}
-              <ThumbnailPicture
-                src={photos[2]}
-                alt="Thumbnail photo"
-                onClick={() => setCurrentPicture(2)}
-              />
-              <ThumbnailPicture
-                src={photos[3]}
-                alt="Thumbnail photo"
-                onClick={() => setCurrentPicture(3)}
-              />
+              <SingleThumbnailPictureContainer
+                style={{
+                  border:
+                    currentPicture === 0 ? "solid 0.2rem #ff7e1b" : "none",
+                  backgroundColor: "#ffffff",
+                }}
+              >
+                <ThumbnailPicture
+                  src={photos[0]}
+                  alt="Thumbnail photo 1"
+                  onClick={() => setCurrentPicture(0)}
+                  className={
+                    currentPicture === 0
+                      ? "selected-thumbnail-picture"
+                      : "thumbnail-picture"
+                  }
+                  style={{
+                    borderRadius: "8px",
+                  }}
+                />{" "}
+              </SingleThumbnailPictureContainer>
+              <SingleThumbnailPictureContainer
+                style={{
+                  border:
+                    currentPicture === 1 ? "solid 0.2rem #ff7e1b" : "none",
+                  backgroundColor: "#ffffff",
+                }}
+              >
+                <ThumbnailPicture
+                  src={photos[1]}
+                  alt="Thumbnail photo 2"
+                  onClick={() => setCurrentPicture(1)}
+                  className={
+                    currentPicture === 1
+                      ? "selected-thumbnail-picture"
+                      : "thumbnail-picture"
+                  }
+                  style={{
+                    borderRadius: "8px",
+                  }}
+                />{" "}
+              </SingleThumbnailPictureContainer>
+              <SingleThumbnailPictureContainer
+                style={{
+                  border:
+                    currentPicture === 2 ? "solid 0.2rem #ff7e1b" : "none",
+                  backgroundColor: "#ffffff",
+                }}
+              >
+                <ThumbnailPicture
+                  src={photos[2]}
+                  alt="Thumbnail photo 3"
+                  onClick={() => setCurrentPicture(2)}
+                  className={
+                    currentPicture === 2
+                      ? "selected-thumbnail-picture"
+                      : "thumbnail-picture"
+                  }
+                  style={{
+                    borderRadius: "8px",
+                  }}
+                />{" "}
+              </SingleThumbnailPictureContainer>
+              <SingleThumbnailPictureContainer
+                style={{
+                  border:
+                    currentPicture === 3 ? "solid 0.2rem #ff7e1b" : "none",
+                  backgroundColor: "#ffffff",
+                }}
+              >
+                <ThumbnailPicture
+                  src={photos[3]}
+                  alt="Thumbnail photo 4"
+                  onClick={() => setCurrentPicture(3)}
+                  className={
+                    currentPicture === 3
+                      ? "selected-thumbnail-picture"
+                      : "thumbnail-picture"
+                  }
+                  style={{
+                    borderRadius: "8px",
+                  }}
+                />{" "}
+              </SingleThumbnailPictureContainer>
             </ThumbnailPicturesContainer>
           </ZoomedInnerContainer>
         </ZoomedContainer>

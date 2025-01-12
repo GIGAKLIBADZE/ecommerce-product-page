@@ -1,0 +1,13 @@
+.selected-thumbnail-picture {
+  background-color: #ffffff;
+  opacity: 0.75;
+}
+
+.thumbnail-picture:hover {
+  background-color: #ffffff;
+  opacity: 0.5;
+}
+
+.white {
+  background-color: #ffffff;
+}

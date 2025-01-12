@@ -94,9 +94,19 @@ export const ThumbnailPicturesContainer = styled.div`
   margin-top: 4rem;
 `;
 
-export const ThumbnailPicture = styled.img`
+export const SingleThumbnailPictureContainer = styled.div`
+  border-radius: 10px;
   width: 8.8rem;
   height: 8.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+`;
+
+export const ThumbnailPicture = styled.img`
+  width: 100%;
+  height: 100%;
   border-radius: 10px;
 `;
 
