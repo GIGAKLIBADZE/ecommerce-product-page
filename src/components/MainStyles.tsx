@@ -7,5 +7,6 @@ export const AppContainer = styled.div`
     align-items: center;
     gap: 12.5rem;
     margin-top: 9rem;
+    padding-bottom: 13.2rem;
   }
 `;

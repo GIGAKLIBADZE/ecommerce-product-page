@@ -43,7 +43,7 @@ const Picture: React.FC = () => {
               onClick={() => setZoomIn(true)}
             />
             {desktop ? (
-              <ThumbnailPicturesContainer style={{ paddingBottom: "13.2rem" }}>
+              <ThumbnailPicturesContainer>
                 <SingleThumbnailPictureContainer
                   style={{
                     border:
