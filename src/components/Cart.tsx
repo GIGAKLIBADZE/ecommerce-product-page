@@ -13,7 +13,11 @@ import {
 import SmallProductImage from "/public/image-product-1-thumbnail.jpg";
 import Delete from "/icon-delete.svg";
 
-const Cart: React.FC<{ add: boolean; amount: number }> = ({ add, amount }) => {
+const Cart: React.FC<{
+  add: boolean;
+  amount: number;
+  setAmount: React.Dispatch<React.SetStateAction<number>>;
+}> = ({ add, amount, setAmount }) => {
   return (
     <>
       <CartContainer $add={add}>
@@ -35,7 +39,11 @@ const Cart: React.FC<{ add: boolean; amount: number }> = ({ add, amount }) => {
               <img
                 src={Delete}
                 alt="Recycle bin"
-                style={{ marginLeft: "1.9rem" }}
+                style={{ marginLeft: "1.9rem", cursor: "pointer" }}
+                onClick={() => {
+                  console.log("Delete clicked");
+                  setAmount(0);
+                }}
               />
             </ProductContainer>
             <Checkout>Checkout</Checkout>

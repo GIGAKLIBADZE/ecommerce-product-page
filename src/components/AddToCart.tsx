@@ -18,7 +18,7 @@ const AddToCart: React.FC = () => {
   const { amount, setAmount, add, setAdd } = useContext(MainContext);
   return (
     <>
-      <Cart add={add} amount={amount} />
+      <Cart add={add} amount={amount} setAmount={setAmount} />
       <AddToCartContainer>
         <AmountContainer>
           <img
