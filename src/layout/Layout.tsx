@@ -68,13 +68,8 @@ const Layout: React.FC = () => {
             ) : null}
           </MenuAndLogo>
           <CartAndAvatar>
-            <CartAndAvatarInner>
-              <CartBasket
-                src={Cart}
-                alt="Cart"
-                $amount={amount}
-                onClick={() => setAdd(!add)}
-              />
+            <CartAndAvatarInner onClick={() => setAdd(!add)}>
+              <CartBasket src={Cart} alt="Cart" $amount={amount} />
               <AmountContainer $amount={amount}>
                 <small>{amount}</small>
               </AmountContainer>
